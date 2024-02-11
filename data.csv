@@ -1,0 +1,94 @@
+title	score	id	subreddit	url	num_comments	body	created
+[D] Simple Questions Thread	3	1ad5t7g	MachineLearning	https://www.reddit.com/r/MachineLearning/comments/1ad5t7g/d_simple_questions_thread/	21	"Please post your questions here instead of creating a new thread. Encourage others who create new posts for questions to post here instead!
+
+Thread will stay alive until next one so keep posting after the date in the title.
+
+Thanks to everyone for answering questions in the previous thread!"	1706457631.0
+[D] 3 years doing ML, no success yet. Is it common?	198	1aeq9pz	MachineLearning	https://www.reddit.com/r/MachineLearning/comments/1aeq9pz/d_3_years_doing_ml_no_success_yet_is_it_common/	106	"I'm working in ML research for 1.5 years now, more specifically medical imaging and previously as a DL Engineer for building a facial recognition pipeline. Despite a good understanding and all my focus I'm yet to make a good enough system or model for all many use cases I worked on. 
+
+From last 4 months I'm exploring 'learning from noisy label' I worked on 3 techniques, spent considerate time integrating target loaders but results were poor, even worse than baseline. 
+Previously, made a failed attempt to make a system identification using hybrid adaptive algorithm scheme but approach failed. Did write a technical report on that. 
+
+Also, on the otherhand, I do participate in online competition. Vanilla methods get me top 10-20% but when I try to improve on it, I always fail. None of my method work well, super frustrating despite all efforts. 
+
+I'm not trying to build a state-of-art model, but atleast expect myself to get over the previous baselines or work of any significance."	1706626584.0
+[P] Enhancing OpenPose Detection Using Self-Supervised Learning	72	1aey6s6	MachineLearning	https://www.reddit.com/r/MachineLearning/comments/1aey6s6/p_enhancing_openpose_detection_using/	0	"I've built a simple model for extrapolating open pose detection to points outside of the frame.  
+It's a simple NN with 2 hidden layers, but the main challenge was the creation of the dataset.
+
+I've been fiddling a lot with different augmentations like rescaling, 3d rotations, accounting for different image ratios and Y-axis flipping.  
+The effect is seen on these gifs (the ""weird"" points on the left should be marked as missing, but in this use-case, all the points should be on the skeleton in case we want to translate or rescale the skeleton):
+
+[\(left\) Just dw-pose extrapolation; \(right\) dw-pose + our extrapolation](https://i.redd.it/dx18qtfcymfc1.gif)
+
+To train the model in self-supervised manner, i've marked different subsets of points as missing.  
+Those subsets were predefined, based on some common sense (for example left + right ankle).
+
+My qustion is: should I sample randomly from all the possible subsets (which is 2\^18) and maybe use non-uniform distribution for sampling, based on the close-ness of the points, instead of pre-defining different sub-sets?  
+The github repo: [https://github.com/MarkZakelj/openpose-extrapolation](https://github.com/MarkZakelj/openpose-extrapolation)  
+Read more in the blog post: [https://www.katalist.ai/enhancing-openpose-detection-using-self-supervised-learning](https://www.katalist.ai/enhancing-openpose-detection-using-self-supervised-learning)"	1706645912.0
+[D] No free lunch theorem and LLMs	64	1aeq92s	MachineLearning	https://www.reddit.com/r/MachineLearning/comments/1aeq92s/d_no_free_lunch_theorem_and_llms/	78	"I have a question that can be stupid, but the [""No free lunch theorem""](https://w.wiki/4wSw) (Wolpert and Macready) states that for any model, any improved performance over one class of problems is offset by performance over another class. It also states that any two models are equivalent when their performance is averaged across all possible problems.
+
+But what happens with LLMs? If the performance is averaged across all possible problems, the average will be higher than the rest of the models?   
+
+
+Willing to hear opinions."	1706626536.0
+Advanced Math Useful for ML? [D]	4	1af8uso	MachineLearning	https://www.reddit.com/r/MachineLearning/comments/1af8uso/advanced_math_useful_for_ml_d/	7	I’m an undergrad at a strong CS university with the goal of becoming a ML researcher or engineer in the future. I’m also very interested in math and have already completed my math minor, which included courses in Real Analysis and Algebra. I’m wondering if it is at all useful to continue taking harder math classes (and delaying my graduation from 3 to 4 years). The math classes I’m considering for the future are Topology, Complex Analysis, Measure Theory, and Probability (that uses Measure Theory). Obviously these courses will not have direct applications to work I might do in the future, but will they help me, maybe, think better or something else? Thank you so much for any advice you can offer!	1706674332.0
+[N] PyTorch 2.2: FlashAttention-v2, AOTInductor	20	1aev719	MachineLearning	https://www.reddit.com/r/MachineLearning/comments/1aev719/n_pytorch_22_flashattentionv2_aotinductor/	1	"# [PyTorch 2.2: FlashAttention-v2, AOTInductor](https://github.com/pytorch/pytorch/releases/tag/v2.2.0)
+
+* Highlights
+* Backwards Incompatible Changes
+* Deprecations
+* New Features
+* Improvements
+* Bug fixes
+* Performance
+* Documentation
+
+# Highlights
+
+We are excited to announce the release of PyTorch® 2.2!  PyTorch 2.2 offers \~2x performance improvements to scaled\_dot\_product\_attention  
+  via FlashAttention-v2 integration, as well as AOTInductor, a new  ahead-of-time compilation and deployment tool built for  non-python  server-side deployments.
+
+This release also includes improved torch.compile support for  Optimizers, a number of new inductor optimizations, and a new logging  mechanism called TORCH\_LOGS.
+
+**Please note that we are** [**deprecating macOS x86 support**](https://github.com/pytorch/pytorch/issues/114602)**, and PyTorch 2.2.x will be the last version that supports macOS x64.**
+
+Along with 2.2, we are also releasing a series of updates to the  PyTorch domain libraries. More details can be found in the library  updates blog.
+
+This release is composed of 3,628 commits and 521 contributors since  PyTorch 2.1. We want to sincerely thank our dedicated community for your  contributions. As always, we encourage you to try these out and report  any issues as we improve 2.2.  More information about how to get started  with the PyTorch 2-series can be found at our [Getting Started](https://pytorch.org/get-started/pytorch-2.0/) page.
+
+Summary:
+
+&#x200B;
+
+* scaled\_dot\_product\_attention  
+ (SDPA) now supports FlashAttention-2, yielding around 2x speedups compared to previous versions.
+* PyTorch 2.2 introduces a new ahead-of-time extension of  TorchInductor called AOTInductor, designed to compile and deploy PyTorch  programs for non-python server-side.
+* torch.distributed  
+ supports a new abstraction for initializing and representing ProcessGroups called device\_mesh.
+* PyTorch 2.2 ships a standardized, configurable logging mechanism called TORCH\_LOGS.
+* A number of torch.compile improvements are included in PyTorch 2.2,  including improved support for compiling Optimizers and improved  TorchInductor fusion and layout optimizations.
+* Please note that we are deprecating macOS x86 support, and PyTorch 2.2.x will be the last version that supports macOS x64.
+* torch.ao.quantization  
+ now offers a prototype torch.export  
+ based flow"	1706638719.0
+[D] Anyone here has done ML models for Telecom industry	2	1afbfq2	MachineLearning	https://www.reddit.com/r/MachineLearning/comments/1afbfq2/d_anyone_here_has_done_ml_models_for_telecom/	0	"
+
+So I am working on defining AI use cases for Telecom industry. The long term plan is to leverage historical data to make predictive analysis like replacing ONT and router. The thing is my first step right now is to identify the data points/features from API  which can be used to develop use cases  and put the historical data of the useful features I suggest on a datalake. I find it difficult to say conclusively whether the said data points are only enough in solving the uses cases. What are your suggestions to approach this? I usually worked with some data and then work towards picking the features so this is kinda new"	1706682840.0
+[D] How to find collaborators	23	1aet5o1	MachineLearning	https://www.reddit.com/r/MachineLearning/comments/1aet5o1/d_how_to_find_collaborators/	8	"Im curently in my 3rd year of my phd. Most of the work done thus far has been solo-ed, will close to minimal supervision (didn’t receive much help besides beautification of research papers).
+
+Im just curious how does one find collaboration besides within their own faculty/ research team?
+
+For context, most of the students in my team are scattered (to some extent) over different nuanced research areas, and sadly very few overlaps with mine.
+
+I would love to find collaborators doing something in common as me since its getting pretty rough and boring working alone, will not receiving much guidance. I would imagine collaboration breeds ideas much faster and obviously speeds up the paper churning process."	1706633810.0
+[R] SERL: A software suite for training real-world RL from pixels in 25-50 minutes	8	1aezdld	MachineLearning	https://www.reddit.com/r/MachineLearning/comments/1aezdld/r_serl_a_software_suite_for_training_realworld_rl/	1	"Project page: https://serl-robot.github.io/
+
+Arxiv: https://arxiv.org/abs/2401.16013
+
+Github: https://github.com/rail-berkeley/serl
+
+TL;DR: they provide an RL implementation that achieves very high sample efficiency. The training time is low enough to make training in the real world practical, and they provide several demos on real robots. They don't make any new algorithmic breakthroughs, but combine methods from a number of recent papers into an easy-to-use implementation. 
+
+One of the authors, Sergey Levine, has a [video about sample efficient real-world RL](https://www.youtube.com/watch?v=17NrtKHdPDw) as part of his youtube series about RL."	1706648820.0
+[D]Understanding Mamba: Recommended Resources	1	1afbi7g	MachineLearning	https://www.reddit.com/r/MachineLearning/comments/1afbi7g/dunderstanding_mamba_recommended_resources/	0	As I delve into Mamba, I find myself immersed in various materials such as papers and videos. Despite this, I still struggle to fully grasp its workings. To better understand Mamba, I am seeking recommended resources. Although I have been exploring [State Space Models: A Modern Approach](https://probml.github.io/ssm-book/root.html), it appears that updates to this resource have been paused. Moreover, it doesn't cover the S4 model, a crucial stepping stone before progressing to Mamba. Any suggestions for comprehensive and current learning materials would be greatly appreciated.	1706683095.0
